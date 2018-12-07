@@ -1,0 +1,27 @@
+
+<view class="container">
+   <view class="header">
+        <h-epsoide 
+            index= "{{ classicData.index }}"
+            class= "epsoide"
+        />
+        <h-like 
+            like= "{{ classicData.like_status }}" 
+            count= "{{ classicData.fav_nums }}"
+            bind:like= "onLike"
+            class= "like"
+        />
+   </view>
+    <h-movie 
+        img= "{{ classicData.image }}"
+        content= "{{ classicData.content }}"
+    />
+    <h-navi 
+        title= "{{ classicData.title }}" 
+        first= "{{ first }}"
+        latest= "{{ latest }}"
+        class= "navi"
+        bind:left= "onNext"
+        bind:right= "onPrevious"
+    />
+</view>

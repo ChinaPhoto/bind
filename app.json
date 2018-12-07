@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/classic/classic"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "夜月无痕",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default ",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": false,
+    "pageOrientation": "auto"
+  }
+}

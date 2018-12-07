@@ -1,0 +1,4 @@
+page {
+    font-family: 'Source Han Sans CN';
+    font-size: 32rpx
+}

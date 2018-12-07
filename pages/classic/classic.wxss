@@ -1,0 +1,62 @@
+/* pages/classic/classic.wxss */
+    /*  flex-direction 的四个属性 主要是 
+        row 横向排列 
+        row-reverse 横向倒序排列 
+        column 竖向排列     
+        column-reverse 竖向倒序排列
+    */
+     /* 
+        justify-content 常用属性
+         space-around 等距分布 (每个盒子的 maigintop marginbottom 是一样的)
+         space-between 平均分布
+         center 居中分布
+         flex-start 开头分布
+         flex-end 结尾分布
+         space-evenly 等距分布(每个盒子之间的距离是一样的)
+     
+     */
+     /*
+     flex 布局上面存在主轴和交叉轴 的一说
+        首先 主轴和交叉轴的 是不固定的  谁是主轴取决于flex-direction 的取值
+        其实    justify-content 是决定主轴样式分布的属性
+                align-items决定的是交叉轴样式分布的属性 
+        最后 需要注意主轴的方向 也是跟flex-direction 的取值有关系
+     
+     */
+     /* 
+        stretch 属性 主要作用于交叉轴  
+        呈现结果是盒子在交叉轴方向上填充满整个view
+        触发条件是子盒子的 高度或者宽度未被设置
+        baseline 属性 保证的是 文字基线的对其
+     */
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    height: 100rpx;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.epsoide {
+    margin-left: 30rpx;
+    margin-top: 4rpx;
+}
+
+.like {
+    margin-top: 6rpx;
+}
+
+.navi {
+    position: absolute;
+    bottom: 40rpx;
+} 

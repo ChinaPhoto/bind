@@ -1,0 +1,20 @@
+/* components/link/index.wxss */
+.container {
+   display: inline-flex;
+   flex-direction: row;
+   padding: 10rpx; 
+}
+.container image {
+    width: 32rpx;
+    height: 28rpx;
+}
+
+.container text {
+    /* font-family: 'Source Han Sans CN'; */
+    font-size: 18rpx;
+    line-height: 18rpx;
+    color: #bbb;
+    position: relative;
+    bottom: 10rpx;
+    left: 6rpx;
+}
