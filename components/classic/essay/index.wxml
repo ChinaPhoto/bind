@@ -1,6 +1,6 @@
-<!--components/classic/essay/index.wxml-->
-<view class="container">
-    <image src="{{ src }}" />
-    <image src="./images/essay@tag.png" />
-    <text>{{ content }}</text>
+
+<view class="classic-container" hidden= "{{ hidden }}">
+    <image class="classic-img" src="{{ img }}" />    
+    <image class="tap" src="./images/essay@tag.png" />
+    <text class="content">{{ content }}</text>
 </view>

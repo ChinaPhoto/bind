@@ -16,7 +16,9 @@ Page({
   data: {
     classicData:{},
     first: false,
-    latest: true
+    latest: true,
+    likeCount: 0,
+    likeStatus: false
   },
 
   methods:{
@@ -46,7 +48,8 @@ Page({
   // 数据统一处理的私有函数
   _updateClassic( nextOrPrevious ) {
     let index = this.data.classicData.index
-    classicModel.getClassic(index, nextOrPrevious, (res)=>{
+    classicModel.getClassic(index, nextOrPrevious, ( res )=> {
+        this._getLikeStatus(res.data.id, res.data.type)
         this.setData({
           classicData: res.data, 
           first: classicModel.isFirst(res.data.index),
@@ -55,6 +58,15 @@ Page({
     })
   },
 
+  // 单独处理link 组件的缓存问题
+  _getLikeStatus( artId, category ) {
+    likeModel.getClassicLikeStatus(artId, category, ( res )=> {
+      this.setData({
+        likeCount: res.data.fav_nums,
+        likeStatus: res.data.like_status
+      })
+    }) 
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -62,7 +74,9 @@ Page({
   onLoad () {
     classicModel.getLatest((res)=> {
       this.setData({
-        classicData: res.data
+        classicData: res.data,
+        likeCount: res.data.fav_nums,
+        likeStatus: res.data.like_status
       })
     })
   },

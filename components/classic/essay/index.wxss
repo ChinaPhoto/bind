@@ -1,4 +1,1 @@
-/* components/classic/essay/index.wxss */
-.container {
-    display: flex
-}
+@import '../class-ben.wxss'

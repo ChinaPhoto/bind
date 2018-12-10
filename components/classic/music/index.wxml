@@ -1,6 +1,6 @@
-<view>
-    <image src= "{{ img }}"/>
-    <image src= "{{ pauseSrc }}"/>
-    <image src= "./images/music@tag.png"/>
+<view class="container" hidden= "{{ hidden }}">
+    <image class="classic-img {{ playing? 'rotation' : '' }}" src= "{{ img }}"/>
+    <image class="playSrc" src= "{{ !playing? playSrc : pauseSrc }}" bind:tap= "onPlay"/>
+    <image class="tag" src= "./images/music@tag.png"/>
     <text>{{ content }}</text>
 </view>

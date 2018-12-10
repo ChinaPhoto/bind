@@ -1,5 +1,5 @@
 
-import {classicBeh} from '../classic-behaviors.js'
+import { classicBeh } from '../classic-behaviors.js'
 
 Component({
   /**

@@ -1,4 +1,4 @@
-/* components/epsoide/index.wxss */
+/* components/episode/index.wxss */
 .container {
     display: inline-flex;
     flex-direction: row;

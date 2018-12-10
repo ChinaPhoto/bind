@@ -1,18 +1,32 @@
 
 <view class="container">
    <view class="header">
-        <h-epsoide 
+        <h-episode 
             index= "{{ classicData.index }}"
-            class= "epsoide"
+            class= "episode"
         />
         <h-like 
-            like= "{{ classicData.like_status }}" 
-            count= "{{ classicData.fav_nums }}"
+            like= "{{ likeStatus }}" 
+            count= "{{ likeCount }}"
             bind:like= "onLike"
             class= "like"
         />
    </view>
+   <!-- wx.if 跟hidden的区别还是很大的,切换方式的不同决定的 使用哪种方式   hidden 是不会触发 detached生命周期-->
     <h-movie 
+        hidden= "{{ classicData.type != 100 }}"
+        img= "{{ classicData.image }}"
+        content= "{{ classicData.content }}"
+    />
+     <h-music
+        wx:if = "{{ classicData.type == 200 }}"
+        img= "{{ classicData.image }}"
+        content= "{{ classicData.content }}"
+        src= "{{ classicData.url }}"
+        title= "{{ classicData.title }}"
+    />
+     <h-essay 
+        hidden= "{{ classicData.type != 300 }}"
         img= "{{ classicData.image }}"
         content= "{{ classicData.content }}"
     />

@@ -1,9 +1,10 @@
 
 
-let classicBeh = Behavior({
+const classicBeh = Behavior({
     properties: {
         img: String,
-        content: String
+        content: String,
+        hidden: Boolean
       }
 }) 
 

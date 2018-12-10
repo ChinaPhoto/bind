@@ -1,4 +1,4 @@
-// components/epsoide/index.js
+// components/episode/index.js
 Component({
   /**
    * 组件的属性列表
@@ -39,7 +39,7 @@ Component({
         year = date.getFullYear(),
         mounth = date.getMonth();
     this.setData({
-      year: year,
+      year,
       mounth: this.data.months[mounth]
     })
   },

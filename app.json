@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/classic/classic"
+    "pages/classic/classic",
+    "pages/book/book",
+    "pages/my/my"
   ],
-  "window":{
+  "window": {
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "夜月无痕",
     "navigationBarTextStyle": "black",
@@ -10,5 +12,30 @@
     "backgroundColor": "#ffffff",
     "enablePullDownRefresh": false,
     "pageOrientation": "auto"
+  },
+  "tabBar": {
+    "selectedColor": "#000",
+    "backgroundColor": "#fff",
+    "color": "#c7c7c7",
+    "list": [
+      {
+        "selectedIconPath": "/images/tab/classic@highlight.png",
+        "pagePath": "pages/classic/classic",
+        "iconPath": "/images/tab/classic.png",
+        "text": "流行"
+      },
+      {
+        "selectedIconPath": "/images/tab/book@highlight.png",
+        "pagePath": "pages/book/book",
+        "iconPath": "/images/tab/book.png",
+        "text": "书籍"
+      },
+      {
+        "selectedIconPath": "/images/tab/my@highlight.png",
+        "pagePath": "pages/my/my",
+        "iconPath": "/images/tab/my.png",
+        "text": "喜欢"
+      }
+    ]
   }
 }
