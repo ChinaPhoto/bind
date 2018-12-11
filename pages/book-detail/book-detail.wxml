@@ -1,0 +1,20 @@
+<view class= "container">
+    <view class="head">
+        <image src= "{{ book.image }}" />
+        <text class= "title">{{ book.title }}</text>
+        <text class= "author">{{ book.author[0] }}</text>
+    </view>
+    <view class="sub-container">
+        <text calss= "headline">短评</text>
+        <view class="content-container">
+            <block wx:for="{{ comments }}" wx:key= "index">
+                <h-tag 
+                    text= "{{ item.content }}" 
+                >
+                    <text class="num" slot= "after">{{ "+" + item.nums}}</text>
+                </h-tag>
+                
+            </block>
+        </view>
+    </view>
+</view>

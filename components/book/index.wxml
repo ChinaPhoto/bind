@@ -1,5 +1,5 @@
-<view class= "container">
-    <image src= "{{ book.image }}"/>
+<view class= "container" bind:tap= "onTap">
+    <image class="" src= "{{ book.image }}"/>
     <view class= "description">
         <text class= "title">{{ book.title }}</text>
         <text class= "author">{{ book.author }}</text>

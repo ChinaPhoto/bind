@@ -1,3 +1,26 @@
-<h-book 
-    book= "{{books[0]}}"
-/>
+<!-- 
+<block wx:for= "{{ books }}">
+    <h-book 
+        book= "{{ item }}"
+    />
+</block> -->
+
+
+<view class="container">
+    <view class="header">
+        <view class= "box">
+            <image src= "/images/icon/search.png" />
+            <text>搜索书籍</text>
+        </view>
+    </view>
+    <view class="sub-content">
+        <image src= "/images/book/quality.png" />
+        <view class="books-container" >         
+            <block wx:for= "{{ books }}" wx:key="id">
+                <h-book 
+                    book= "{{ item }}"
+                />
+            </block>
+        </view>
+    </view>
+</view>
