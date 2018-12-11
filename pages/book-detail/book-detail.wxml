@@ -10,11 +10,16 @@
             <block wx:for="{{ comments }}" wx:key= "index">
                 <h-tag 
                     text= "{{ item.content }}" 
+                    my-class= "{{ index == 0? 'ex-class1': '' || index == 1? 'ex-class2' : '' }}"
                 >
                     <text class="num" slot= "after">{{ "+" + item.nums}}</text>
                 </h-tag>
                 
             </block>
         </view>
+    </view>
+    <view class="sub-container">
+        <text calss= "headline">内容简介</text>
+        <text class= "content">{{ book.summary }}</text>
     </view>
 </view>
