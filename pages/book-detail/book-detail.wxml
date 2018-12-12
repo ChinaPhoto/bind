@@ -1,3 +1,5 @@
+<wxs src= "../../util/filter.wxs" module= "util" />
+
 <view class= "container">
     <view class="head">
         <image src= "{{ book.image }}" />
@@ -5,21 +7,105 @@
         <text class= "author">{{ book.author[0] }}</text>
     </view>
     <view class="sub-container">
-        <text calss= "headline">短评</text>
+        <text class= "headline">短评</text>
+         <text class= "shadow" wx:if= "{{ comments.length === 0 }}" >还没有短评</text>
         <view class="content-container">
-            <block wx:for="{{ comments }}" wx:key= "index">
+            <block wx:for="{{ util.limit(comments, 10) }}" wx:key= "index">
                 <h-tag 
                     text= "{{ item.content }}" 
-                    my-class= "{{ index == 0? 'ex-class1': '' || index == 1? 'ex-class2' : '' }}"
+                    my-class= "{{ tool.highlight(index) }}"
                 >
                     <text class="num" slot= "after">{{ "+" + item.nums}}</text>
-                </h-tag>
-                
+                </h-tag>            
             </block>
         </view>
     </view>
     <view class="sub-container">
-        <text calss= "headline">内容简介</text>
-        <text class= "content">{{ book.summary }}</text>
+        <text class= "headline">内容简介</text>
+        <text class= "content" decode="{{true}}">{{ util.format(book.summary) }}</text>
+        <!-- <text>{{ xx.filter(123) }}</text> -->
+    </view>
+    <view class="sub-container">
+        <text class="headline">书本信息</text>
+        <view class= "detail-container">
+             <view class="vertical description">
+                <text>出版社</text>
+                <text>出版年</text>
+                <text>页数</text>
+                <text>定价</text>
+                <text>装帧</text>
+            </view>
+             <view class="vertical">
+                <text>{{book.publisher}}</text>
+                <text>{{book.pubdate}}</text>
+                <text>{{book.pages}}</text>
+                <text>{{book.price}}</text>
+                <text>{{book.binding}}</text>
+            </view>
+        </view>
     </view>
 </view>
+<view class= "post-container" wx:if="{{ !posting }}">
+    <view  
+        bind:tap= "onFakePost" 
+        class= "post-fake"
+    >
+        <text>输入短评</text>
+    </view>
+    <view class= "like-container">
+          <h-like 
+            like= "{{ likeStatus }}" 
+            count= "{{ likeCount }}"
+            bind:like= "onLike"
+            class= "like"
+        />
+    </view>
+</view>
+
+<h-mask catch:touchmove= "preventTouchMove"  wx:if="{{ posting }}" />
+
+<view class= "posting-containter" wx:if="{{ posting }}">
+    <view class= "post-header">
+        <text wx:if= "{{ comments.length !== 0 }}" >仅可点击标签+1</text>
+        <text wx:else >暂无短评</text>
+        <text 
+            class= "cancel" 
+            bind:tap= "onCancel"
+        >取消</text>
+    </view>
+    <view class= "posting-inercont content-container">
+         <block wx:for="{{ util.limit(comments, 3) }}" wx:key= "index">
+                <h-tag 
+                    text= "{{ item.content }}" 
+                    my-class= "{{ tool.highlight(index) }}"
+                    bind:tapping= "onPost"
+                >
+                    <text class="num" slot= "after">{{ "+" + item.nums}}</text>
+                </h-tag>            
+            </block>
+    </view>
+    <input 
+        bindconfirm= "onPost"
+        class= "post" 
+        placeholder= "短评最多12个字"></input>
+    
+</view>
+
+<wxs module= "tool">
+    var highlight = function(index) {
+        switch( index ) {
+            case 0: 
+                return 'ex-class1'
+                break;
+            case 1:
+                return 'ex-class2'
+                break;
+            default:
+                return ''
+        }
+    }
+
+    module.exports = { 
+        highlight: highlight
+     }
+</wxs>

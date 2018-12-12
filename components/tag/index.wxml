@@ -1,4 +1,4 @@
-<view class="container my-class">
+<view  bind:tap= "onTap" class="container my-class">
     <text>{{ text }}</text>
     <!-- 插槽 -->
     <slot name="after"></slot>
