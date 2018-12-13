@@ -1,0 +1,66 @@
+<view class= "container">
+    <view class= "header">
+        <view class= "search-container">
+            <image 
+                class= "icon" 
+                src= "images/search.png" 
+            />
+            <input 
+                placeholder= "请输入关键字..." 
+                focus= "{{true}}" 
+                placeholder-class= "in-bar"
+                class= "bar"
+                bind:confirm= "onConfirm"
+                value= "{{ value }}"
+            />
+             <image 
+                class= "cancel-img" 
+                src= "images/cancel.png" 
+                bind:tap= "onDelect"
+            />
+        </view>
+        <view class= "cancel" bind:tap= "onCancel">
+            取消
+        </view>
+    </view>
+
+    <view class= "history-center" wx:if= "{{ !searching }}">
+        <view class="history">
+            <view class="title">
+                <view class="chunk"></view>
+                <text>历史搜索</text>
+            </view>
+            <view class= "tags">
+                <block wx:for="{{ historyData }}"  wx:key="index">
+                    <h-tag 
+                        text= "{{ item }}"
+                        bind:tapping= "onConfirm"
+                    />
+                </block>
+            </view>           
+        </view>
+        <view class="history hot-search">
+            <view class="title">
+                <view class="chunk"></view>
+                <text>热门搜索</text>
+            </view>   
+             <view class= "tags">
+                <block wx:for="{{ hotData }}"  wx:key="index">
+                    <h-tag 
+                        text= "{{ item }}"
+                        bind:tapping= "onConfirm"
+                    />
+                </block>
+            </view>             
+        </view>
+    </view>
+    <view 
+        wx:if= "{{ searching }}" class="books-container">
+        <block wx:for="{{ booksData }}"  wx:key="{{ item.id }}">
+            <h-book 
+                book="{{ item }}" 
+                class= "book" 
+            />
+        </block>  
+    </view>
+</view>
