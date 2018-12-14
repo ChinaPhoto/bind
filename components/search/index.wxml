@@ -63,4 +63,14 @@
             />
         </block>  
     </view>
+    <h-loading 
+        wx:if= "{{ isLoading }}" 
+        class= "loading-center"
+    />
+    <h-loading 
+        class= "loading"
+        wx:if= "{{ isLoad }}" 
+    />
+    <text wx:if= "{{ noneResult }}" class="empty-tip"> 没有搜索到书籍 </text>
 </view>
+

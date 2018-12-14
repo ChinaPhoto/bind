@@ -157,3 +157,9 @@
     width: 500rpx;
     font-size: 28rpx;
 }
+
+.loading-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

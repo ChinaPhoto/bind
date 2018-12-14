@@ -6,6 +6,10 @@ Component({
   properties: {
     book: {
       type: Object
+    },
+    isShow: {
+      type: Boolean,
+      value: true
     }
   },
 

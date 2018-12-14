@@ -2,6 +2,7 @@
   "component": true,
   "usingComponents": {
     "h-tag": "/components/tag/index",
-    "h-book": "/components/book/index"
+    "h-book": "/components/book/index",
+    "h-loading": "/components/loading/index"
   }
 }
