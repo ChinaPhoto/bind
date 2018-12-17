@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/my/my",
     "pages/classic/classic",
     "pages/book/book",
-    "pages/my/my",
+ 
     "pages/book-detail/book-detail"
   ],
   "window": {
