@@ -42,6 +42,12 @@ class BookModel extends HTTP {
                }
           })
      }
+
+     getMyFavor() {
+          return this.request({
+               url: 'classic/favor'
+          })
+     }
      
 }
 

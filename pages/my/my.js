@@ -1,4 +1,8 @@
+import {
+  BookModel
+} from '../../models/book.js'
 
+const bookModel = new BookModel()
 // pages/my/my.js
 Page({
 
@@ -7,7 +11,9 @@ Page({
    */
   data: {
     authorized: false,
-    userInfo: null
+    userInfo: null,
+    bookCount: 0,
+    classics: []
   },
 
   onGetUserInfo(event) {
@@ -25,13 +31,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.userAuthorized()
+    this.userAuthorized();
+    this.getMyBookCount();
+    this.getMyFavor()
+  },
+  
+  // 获取  喜欢的部分
+  getMyFavor() {
+    bookModel.getMyFavor()
+             .then(res => {
+                this.setData({
+                  classics: res
+                })
+             })
   },
 
+  //获取喜欢书的个数
+  getMyBookCount() {
+    bookModel.getMyBookCount()
+             .then(res => {
+               this.setData({
+                  bookCount: res.count
+               })
+             })
+  },
+
+  // 获取权限逻辑
    userAuthorized() {
     wx.getSetting({
       success:res=> {
-        console.log(res)
         if(res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success: data => {
@@ -48,6 +76,25 @@ Page({
     }) 
    },
 
+
+   // 我们跳转页面
+   onJumpToAbout() {
+    wx.navigateTo({
+      url: '/pages/about/about',
+    })
+   },
+
+
+   // 喜欢部分跳转的页面
+   onJumpToDetail(event) {
+     console.log(event)
+    const cid = event.detail.cid
+    const type = event.detail.type
+    wx.navigateTo({
+      url:`/pages/classic-detail/classic-detail?cid=${cid}&type=${type}`
+    })
+   },
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

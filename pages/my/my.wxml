@@ -21,12 +21,26 @@
     </view>
     <!-- <open-data type= "userAvatarUrl" class= "avatar avatar-position" /> -->
     <view class= "about-container">
-        <view class= "about-us">
+        <view class= "about-us" bind:tap= "onJumpToAbout">
             <image src= "/images/my/about.png" />
             <text class= "description">关于我们</text>
         </view>
          <view class= "about-us">
+              <text class="book-num">{{ bookCount }}</text>
             <text class= "description">喜欢的书</text>
+        </view>
+    </view>
+
+     <view class="like-container">
+        <image class="headline" src="/images/my/like.png" />
+        <view class="preview-container">
+            <block wx:for="{{ classics }}" wx:key="">
+                <h-preview  
+                    class="preview" 
+                    classic="{{ item }}" 
+                    bind:tapping="onJumpToDetail"
+                />
+            </block>
         </view>
     </view>
 </view>

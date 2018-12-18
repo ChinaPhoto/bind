@@ -1,5 +1,6 @@
 {
     "usingComponents": {
-      "h-button":"/components/image-button/index"  
+      "h-button":"/components/image-button/index",
+      "h-preview":"/components/preview/index" 
     }
   }
