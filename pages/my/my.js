@@ -1,3 +1,4 @@
+
 // pages/my/my.js
 Page({
 
@@ -5,15 +6,47 @@ Page({
    * 页面的初始数据
    */
   data: {
+    authorized: false,
+    userInfo: null
+  },
 
+  onGetUserInfo(event) {
+    const userInfo = event.detail.userInfo
+    if(userInfo) {
+      this.setData({
+        userInfo,
+        authorized: true
+      })
+    }
+     console.log(userInfo)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.getUserInfo()
+    this.userAuthorized()
   },
+
+   userAuthorized() {
+    wx.getSetting({
+      success:res=> {
+        console.log(res)
+        if(res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: data => {
+              this.setData({
+                userInfo: data.userInfo,
+                authorized: true
+              })
+            }
+          })
+        }else {
+          console.log('err')
+        }
+      }
+    }) 
+   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

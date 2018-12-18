@@ -5,12 +5,21 @@
             index= "{{ classicData.index }}"
             class= "episode"
         />
-        <h-like 
-            like= "{{ likeStatus }}" 
-            count= "{{ likeCount }}"
-            bind:like= "onLike"
-            class= "like"
-        />
+        <view class="like-container">
+             <h-like 
+                like= "{{ likeStatus }}" 
+                count= "{{ likeCount }}"
+                bind:like= "onLike"
+                class= "like"
+            />
+            <h-button class= "share-btn" open-type= "share">
+                <image 
+                    class= "share" 
+                    slot= "img"
+                    src= "/images/icon/share.png"
+                />
+            </h-button>
+        </view>
    </view>
    <!-- wx.if 跟hidden的区别还是很大的,切换方式的不同决定的 使用哪种方式   hidden 是不会触发 detached生命周期-->
     <h-movie 

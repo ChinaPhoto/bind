@@ -1,1 +1,5 @@
-{}
+{
+    "usingComponents": {
+      "h-button":"/components/image-button/index"  
+    }
+  }

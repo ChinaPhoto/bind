@@ -2,6 +2,7 @@
     "usingComponents": {
         "h-tag":"/components/tag/index",
         "h-like":"/components/like/index",
-        "h-mask":"/components/mask/index"
+        "h-mask":"/components/mask/index",
+        "h-button":"/components/image-button/index"  
     }
 }

@@ -5,6 +5,7 @@
     "h-music": "/components/classic/music/index",
     "h-essay": "/components/classic/essay/index",
     "h-episode": "/components/episode/index",
-    "h-navi": "/components/navi/index"
+    "h-navi": "/components/navi/index",
+    "h-button":"/components/image-button/index"  
   }
 }

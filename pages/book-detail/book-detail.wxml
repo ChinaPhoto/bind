@@ -58,8 +58,16 @@
             count= "{{ likeCount }}"
             bind:like= "onLike"
             class= "like"
-        />
+        />        
+        <h-button class= "share-btn" open-type= "share">
+            <image 
+                class= "share" 
+                slot= "img"
+                src= "/images/icon/share.png"
+            />
+        </h-button>
     </view>
+  
 </view>
 
 <h-mask catch:touchmove= "preventTouchMove"  wx:if="{{ posting }}" />

@@ -1,6 +1,25 @@
 <view class= "container">
     <image src= "/images/my/my@bg.png" class= "bg" />
-    <open-data type= "userAvatarUrl" class= "avatar avatar-position"/>
+    <h-button  
+        bind:getuserinfo= "onGetUserInfo" 
+        open-type= "getUserInfo" 
+        class= "avatar avatar-position"
+        wx:if= "{{ !authorized }}"
+    >
+         <image 
+            slot="img" 
+            class="avatar" 
+            src="/images/my/my.png" 
+        />
+    </h-button>
+    <view 
+        class= "avatar-container avatar-position"
+        wx:if= "{{ authorized }}" 
+    >
+        <image class="avatar" src= "{{ userInfo.avatarUrl }}" />
+        <text class= "description">{{ userInfo.nickName }}</text>
+    </view>
+    <!-- <open-data type= "userAvatarUrl" class= "avatar avatar-position" /> -->
     <view class= "about-container">
         <view class= "about-us">
             <image src= "/images/my/about.png" />
