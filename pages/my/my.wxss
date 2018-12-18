@@ -12,6 +12,7 @@
 .avatar-position {
     position: absolute;
     top: 255rpx;
+    
 }
 
 .my-img {
