@@ -10,6 +10,11 @@ let likeModel = new LikeModel()
 
 Page({
 
+
+  properties: {
+    cid: Number,
+    type: Number
+  },
   /**
    * 页面的初始数据
    */
@@ -25,8 +30,11 @@ Page({
  
   },
 
+
+  
   // 点心触发的事件
   onLike(event) {
+
     const behavior = event.detail.behavior
     likeModel.like(
         behavior, 
@@ -68,6 +76,11 @@ Page({
     }) 
   },
 
+  // 监听组件页面加载
+  attached(options) {
+    console.log(options)
+  },
+ 
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,1 +1,4 @@
-<v-classic cid="{{cid}}" type="{{type}}" />
+<h-classic 
+    cid="{{ cid }}" 
+    type="{{ type }}" 
+/>

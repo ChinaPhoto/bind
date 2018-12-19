@@ -20,7 +20,7 @@
     margin-left:20rpx;
     margin-top:-2rpx;
     height:40rpx;  
-    width:76rpx ;
+    width:78rpx ;
     font-size:24rpx;
     background-color:#f7f7f7 !important;
   }
