@@ -92,8 +92,7 @@ Page({
 
   
     wx.navigateTo({
-      url: '/pages/classic/classic'
-      // url:`/pages/classic-detail/classic-detail?cid=${cid}&type=${type}`
+      url:`/pages/classic-detail/classic-detail?cid=${cid}&type=${type}`
     })
    },
  

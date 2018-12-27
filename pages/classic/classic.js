@@ -15,12 +15,6 @@ Component({
     cid: Number,
     type: Number
   },
-
-
-  properties: {
-    cid: Number,
-    type: Number
-  },
   /**
    * 组件的初始数据
    */
@@ -59,11 +53,6 @@ Component({
     }
   },
 
-  // 监听组件页面加载
-  attached(options) {
-    console.log(options)
-  },
- 
   /**
    * 组件的方法列表
    */
