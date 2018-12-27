@@ -87,9 +87,10 @@ Page({
 
    // 喜欢部分跳转的页面
    onJumpToDetail(event) {
-     console.log(event)
-    const cid = event.detail.cid
-    const type = event.detail.type
+    const cid = event.detail.cid,
+          type = event.detail.type
+
+  
     wx.navigateTo({
       url:`/pages/classic-detail/classic-detail?cid=${cid}&type=${type}`
     })

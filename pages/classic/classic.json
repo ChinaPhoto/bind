@@ -1,4 +1,5 @@
 {
+  "component": true,
   "usingComponents": {
     "h-like":"/components/like/index",
     "h-movie": "/components/classic/movie/index",

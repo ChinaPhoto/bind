@@ -1,6 +1,6 @@
 {
     "component": true,
     "usingComponents": {
-      "v-classic":"/pages/classic/classic"
+      "h-classic":"/pages/classic/classic"
     }
   }

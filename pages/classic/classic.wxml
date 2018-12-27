@@ -40,6 +40,7 @@
         content= "{{ classicData.content }}"
     />
     <h-navi 
+        wx:if= "{{ isShow }}"
         title= "{{ classicData.title }}" 
         first= "{{ first }}"
         latest= "{{ latest }}"

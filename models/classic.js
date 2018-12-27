@@ -14,6 +14,15 @@ class ClassicModel extends HTTP {
             }
         })
     }
+
+    getById(cid, type, success) {
+        let params = {
+            url: `classic/${type}/${cid}`,
+            success: success
+        }
+        this.request(params)
+    }
+
     // 获取的数据
     getClassic (index, nextOrPrevious, callback) {
        
